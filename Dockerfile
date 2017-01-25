@@ -5,7 +5,9 @@ ARG GRAFANA_VERSION
 RUN apt-get update && \
     apt-get -y --no-install-recommends install libfontconfig curl ca-certificates && \
     apt-get clean && \
-    curl https://grafanarel.s3.amazonaws.com/builds/grafana_${GRAFANA_VERSION}_amd64.deb > /tmp/grafana.deb && \
+    wget -qO - https://deb.packager.io/key | sudo apt-key add -echo "deb https://deb.packager.io/gh/yuvaraj951/icongrafana xenial master" | sudo tee /etc/apt/sources.list.d/icongrafana.list
+    sudo apt-get update &&\
+    sudo apt-get install icongrafana /tmp/grafana.deb && \
     dpkg -i /tmp/grafana.deb && \
     rm /tmp/grafana.deb && \
     curl -L https://github.com/tianon/gosu/releases/download/1.7/gosu-amd64 > /usr/sbin/gosu && \
