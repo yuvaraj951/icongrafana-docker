@@ -11,4 +11,4 @@ fi
 echo "GRAFANA_VERSION: ${_grafana_version}"
 echo "DOCKER TAG: ${_grafana_tag}"
 
-docker build --build-arg GRAFANA_VERSION=${_grafana_version} --tag "grafana/grafana:${_grafana_tag}"  --no-cache=true .
+docker build --build-arg GRAFANA_VERSION=${_grafana_version} --tag "yuvaraj951/icongrafana:${_grafana_tag}"  --no-cache=true .
