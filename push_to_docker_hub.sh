@@ -5,4 +5,4 @@ if [ -z "${_grafana_tag}" ]; then
 	_grafana_tag=$GRAFANA_VERSION
 fi
 
-docker push grafana/grafana:${_grafana_tag}
+docker push yuvaraj951/icongrafana:${_grafana_tag}
